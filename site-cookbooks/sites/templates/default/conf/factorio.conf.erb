@@ -1,0 +1,9 @@
+server {
+  listen 80;
+  server_name <%= node['factorio']['domain']['play'] %>;
+  location / {
+    root    /var/www/factorio;
+    index   index.html index.htm;
+  }
+}
+

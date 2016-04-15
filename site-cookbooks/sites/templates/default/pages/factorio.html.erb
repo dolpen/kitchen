@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>工場</title>
+
+</head>
+<body>
+<h1>工場</h1>
+
+<ul>
+  <li>ご安全に</li>
+</ul>
+
+<h2>基本情報</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>どれ</th>
+    <th>どう</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>場所</td>
+    <td><%= node['factorio']['domain']['play'] %></td>
+  </tr>
+  <tr>
+    <td>ポート</td>
+    <td><%= node['factorio']['port'] %></td>
+  </tr>
+  <tr>
+    <td>難易度</td>
+    <td>normal(is not peaceful)</td>
+  </tr>
+  <tr>
+    <td>人数</td>
+    <td>制限無し</td>
+  </tr>
+  <tr>
+    <td>基礎バージョン</td>
+    <td>0.12.19</td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>メンテナンス情報</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>なに</th>
+    <th>いつ</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>サーバープロセスの再起動</td>
+    <td>毎日 19:00 から余裕を持って 5 分くらい</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

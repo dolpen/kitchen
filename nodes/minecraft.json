@@ -1,0 +1,30 @@
+{
+  "base": {
+    "hostname": "minecraft"
+  },
+  "minecraft": {
+    "domain": {
+      "play": "minecraft.dolpen.net",
+      "map": "map.minecraft.dolpen.net"
+    },
+    "version": "1.9",
+    "seed" : "825639246643615188"
+  },
+  "java": {
+    "jdk_version": "8",
+    "install_flavor": "oracle",
+    "oracle": {
+      "accept_oracle_download_terms": "true"
+    },
+    "java_home": "/usr/local/java"
+  },
+  "run_list": [
+    "recipe[base]",
+    "recipe[minecraft::vanilla]",
+    "recipe[sites::vanilla]"
+  ],
+  "automatic": {
+    "ipaddress": "minecraft"
+  }
+}
+

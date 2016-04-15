@@ -1,0 +1,19 @@
+{
+  "java": {
+    "jdk_version": "8",
+    "install_flavor": "oracle",
+    "oracle": {
+      "accept_oracle_download_terms": "true"
+    },
+    "java_home": "/usr/local/java"
+  },
+  "run_list": [
+    "recipe[base]",
+    "recipe[java::oracle]",
+    "recipe[jenkins::master]",
+    "recipe[sites::build]"
+  ],
+  "automatic": {
+    "ipaddress": "build"
+  }
+}

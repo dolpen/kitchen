@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>砂場</title>
+
+</head>
+<body>
+<h1>砂場</h1>
+
+<ul>
+  <li>そこそこ平坦な土地からスタート</li>
+  <li>油断すれば死ぬ</li>
+  <li>挨拶など面倒な手続きは不要、ゲーム内でそういうことしない</li>
+  <li>他人のアイテムの利用は空気を読む</li>
+  <li>放火は死罪</li>
+</ul>
+
+<h2>基本情報</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>どれ</th>
+    <th>どう</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>場所</td>
+    <td><%= node['minecraft']['domain']['play'] %></td>
+  </tr>
+  <tr>
+    <td>ポート</td>
+    <td>デフォルト(25565)</td>
+  </tr>
+  <tr>
+    <td>難易度</td>
+    <td>イージーだった気がする</td>
+  </tr>
+  <tr>
+    <td>人数</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>基礎バージョン</td>
+    <td><%= node['minecraft']['version'] %></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>メンテナンス情報</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>なに</th>
+    <th>いつ</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>セーブデータのバックアップ</td>
+    <td>毎日 18:00</td>
+  </tr>
+  <tr>
+    <td>サーバープロセスの再起動</td>
+    <td>毎日 19:00</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

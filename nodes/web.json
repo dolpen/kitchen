@@ -1,0 +1,14 @@
+{
+  "base": {
+    "hostname": "web"
+  },
+  "run_list": [
+    "recipe[base]",
+    "recipe[sites::main]",
+    "recipe[sites::squid]"
+  ],
+  "automatic": {
+    "ipaddress": "web"
+  }
+}
+

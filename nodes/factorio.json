@@ -1,0 +1,19 @@
+{
+  "base": {
+    "hostname": "factorio"
+  },
+  "factorio": {
+    "domain": {
+      "play": "factorio.dolpen.net"
+    },
+    "port": "37564"
+  },
+  "run_list": [
+    "recipe[base]",
+    "recipe[factorio]",
+    "recipe[sites::factorio]"
+  ],
+  "automatic": {
+    "ipaddress": "factorio"
+  }
+}

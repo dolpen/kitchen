@@ -1,0 +1,47 @@
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+.chef/
+/cookbooks/
+
+# Keyfiles
+dhparam*.pem
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+vendor/*
+
+# Berkshelf
+Berksfile.lock
+
+# For Windows:
+Thumbs.db
+
+# For OSX:
+.DS_Store
+# For TextMate:
+*.tmproj
+tmtags
+
+# For emacs:
+\#*
+.\#*
+# For vim:
+*.swp
+
+# For eclipse
+.project
+.classpath
+.settings
+
+# For IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
