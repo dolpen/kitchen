@@ -2,13 +2,18 @@
   "base": {
     "hostname": "minecraft"
   },
+  "letsencrypt" : {
+    "contact" : "dolpen@dolpen.net"
+  },
   "minecraft": {
     "domain": {
       "play": "minecraft.dolpen.net",
       "map": "map.minecraft.dolpen.net"
     },
-    "version": "1.10",
-    "seed" : "825639246643615188"
+    "description" : "primary popopo server",
+    "version": "1.10.2",
+    "seed" : "",
+    "memory" : 4096
   },
   "java": {
     "jdk_version": "8",
@@ -21,7 +26,8 @@
   "run_list": [
     "recipe[base]",
     "recipe[minecraft::vanilla]",
-    "recipe[sites::vanilla]"
+    "recipe[sites::vanilla]",
+    "recipe[app]"
   ],
   "automatic": {
     "ipaddress": "minecraft"

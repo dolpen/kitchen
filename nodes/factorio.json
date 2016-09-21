@@ -6,6 +6,7 @@
     "domain": {
       "play": "factorio.dolpen.net"
     },
+    "version": "0.12.35",
     "port": "37564"
   },
   "run_list": [

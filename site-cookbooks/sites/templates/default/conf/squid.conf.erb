@@ -24,12 +24,25 @@ server {
   ssl_stapling_verify on;
   ssl_trusted_certificate /etc/letsencrypt/live/dolpen.net/fullchain.pem;
   resolver 8.8.8.8 8.8.4.4 [2001:4860:4860::8888] [2001:4860:4860::8844];
+
+  add_header Strict-Transport-Security 'max-age=31536000;';
+  add_header X-Frame-Options DENY;
+  add_header X-Content-Type-Options nosniff;
   location / {
     root    /var/www/squid;
     index   index.html index.htm;
-    add_header Strict-Transport-Security 'max-age=31536000;';
-    add_header X-Frame-Options DENY;
-    add_header X-Content-Type-Options nosniff;
+  }
+  # SPA
+  location ^~ /finder/templates {
+    root    /var/www/squid-apps;
+  }
+  location ^~ /finder/scripts {
+    root    /var/www/squid-apps;
+  }
+  location /finder {
+    root    /var/www/squid-apps;
+    index   index.html index.htm;
+    rewrite (.*) /finder/index.html break;
   }
 }
 
