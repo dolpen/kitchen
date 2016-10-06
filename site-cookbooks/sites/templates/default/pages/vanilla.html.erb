@@ -40,7 +40,7 @@
   </tr>
   <tr>
     <td>人数</td>
-    <td>20</td>
+    <td><%= node['minecraft']['capacity'] %></td>
   </tr>
   <tr>
     <td>基礎バージョン</td>
@@ -60,12 +60,16 @@
   </thead>
   <tbody>
   <tr>
-    <td>セーブデータのバックアップ</td>
+    <td>セーブデータの<a href="/backup">バックアップ</a></td>
     <td>毎日 18:00</td>
   </tr>
   <tr>
     <td>サーバープロセスの再起動</td>
     <td>毎日 19:00</td>
+  </tr>
+  <tr>
+    <td>前日<a href="/chat">チャットログ</a>の抽出</td>
+    <td>毎日 19:30</td>
   </tr>
   </tbody>
 </table>

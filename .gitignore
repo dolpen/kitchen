@@ -45,3 +45,5 @@ tmtags
 *.iml
 *.ipr
 *.iws
+
+.ruby-version

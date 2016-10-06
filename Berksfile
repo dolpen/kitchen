@@ -8,6 +8,6 @@ cookbook 'letsencrypt', git: 'https://github.com/schubergphilis/letsencrypt.git'
 
 cookbook 'base', git: 'https://github.com/dolpen/chef-base.git'
 cookbook 'factorio', git: 'https://github.com/dolpen/chef-factorio.git'
-cookbook 'minecraft', git: 'https://github.com/dolpen/chef-minecraft.git'
+# cookbook 'minecraft', git: 'https://github.com/dolpen/chef-minecraft.git'
 cookbook 'nginx', git: 'https://github.com/dolpen/chef-nginx.git'
 

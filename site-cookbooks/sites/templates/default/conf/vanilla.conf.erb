@@ -3,7 +3,12 @@ server {
   server_name <%= node['minecraft']['domain']['play'] %>;
   root    /var/www/minecraft;
   index   index.html index.htm;
+  charset UTF-8;
   location /backup {
+    autoindex on;
+    autoindex_localtime on;
+  }
+  location /chat {
     autoindex on;
     autoindex_localtime on;
   }

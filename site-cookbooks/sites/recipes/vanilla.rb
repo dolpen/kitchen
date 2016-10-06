@@ -21,6 +21,7 @@ directory '/var/www/minecraft' do
   action :create
 end
 
+
 =begin
 directory "/etc/nginx/ssl/#{site}" do
   owner 'nginx'
@@ -69,3 +70,9 @@ end
 link '/var/www/minecraft/backup' do
   to '/opt/minecraft/backup'
 end
+
+link '/var/www/minecraft/chat' do
+  to '/opt/minecraft/chat'
+end
+
+
