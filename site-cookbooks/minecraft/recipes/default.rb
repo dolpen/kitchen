@@ -109,7 +109,8 @@ end
 
 cron 'generate logs' do
   user 'minecraft'
-  command "find /opt/minecraft/logs -type f -daystart -mtime '0' -name '*.log.gz' | sort -n | tr \\\\n \\\\0 | xargs -0 zcat | grep '^\\[[0-9:]*\\]\\s\\[Server thread\\/INFO\\]:\\s<' | sed -e 's/\\[Server\\sthread\\/INFO\\]:\\s//g' > /opt/minecraft/chat/`date +\\%Y\\%m\\%d -d '-1 day'`.txt"
+  command "/etc/init.d/minecraft chatlog"
+#  command "find /opt/minecraft/logs -type f -daystart -mtime '0' -name '*.log.gz' | sort -n | tr \\\\n \\\\0 | xargs -0 zcat | grep '^\\[[0-9:]*\\]\\s\\[Server thread\\/INFO\\]:\\s<' | sed -e 's/\\[Server\\sthread\\/INFO\\]:\\s//g' > /opt/minecraft/chat/`date +\\%Y\\%m\\%d -d '-1 day'`.txt"
   hour '19'
   minute '30'
 end

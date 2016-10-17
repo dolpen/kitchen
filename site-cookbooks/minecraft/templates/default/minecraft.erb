@@ -34,6 +34,8 @@ INVOCATION="java -d64 -server \
 -XX:+AggressiveOpts -XX:+DisableExplicitGC -XX:+UseLargePages -XX:+UseTLAB -Djava.net.preferIPv4Stack=true \
 -jar $SERVICE $OPTIONS"
 
+DROPBOX_PATH=/backup/minecraft/<%= node['minecraft']['id'] %>-latest.tar.gz
+
 ME=`whoami`
 
 as_user() {
@@ -124,7 +126,7 @@ mc_backup() {
     as_user "gzip -f \"$BACKUP_FILE\""
     as_user "chmod 777 \"$BACKUP_FILE\""
     echo "Dropboxへアップロード中"
-    curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer <%= @secret %>" --header "Dropbox-API-Arg: {\"path\": \"/backup/minecraft/popopo-latest.tar.gz\",\"mode\": \"overwrite\",\"mute\": false}" --header "Content-Type: application/octet-stream" --data-binary @$BACKUP_FILE.gz >/dev/null 2>&1
+    curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer <%= @secret %>" --header "Dropbox-API-Arg: {\"path\": \"$DROPBOX_PATH\",\"mode\": \"overwrite\",\"mute\": false}" --header "Content-Type: application/octet-stream" --data-binary @$BACKUP_FILE.gz >/dev/null 2>&1
     echo "バックアップが終了しました"
 }
 
@@ -139,6 +141,12 @@ mc_command() {
         sleep .1
         tail -n $[`wc -l "$MCPATH/logs/latest.log" | awk '{print $1}'`-$pre_log_len] "$MCPATH/logs/latest.log"
     fi
+}
+
+mc_chatlog() {
+    CHATLOG_FILE="`date +%Y%m%d -d '-1 day'`.txt"
+    as_user "find $MCPATH/logs -type f -daystart -mtime '0' -name '*.log.gz' | sort -n | tr \\n \\0 | xargs -0 zcat | grep '^\[[0-9:]*\]\s\[Server thread\/INFO\]:\s<' | sed -e 's/\[Server\sthread\/INFO\]:\s//g' > $MCPATH/chat/$CHATLOG_FILE"
+    as_user "find $MCPATH/chat/$CHATLOG_FILE -empty | xargs rm"
 }
 
 #Start-Stop here
@@ -172,8 +180,11 @@ command)
         echo "Must specify server command (try 'help'?)"
     fi
 ;;
+chatlog)
+    mc_chatlog
+;;
 *)
-    echo "Usage: $0 {start|stop|update|backup|status|restart|command \"server command\"}"
+    echo "Usage: $0 {start|stop|update|backup|status|restart|chatlog|command \"server command\"}"
     exit 1
 ;;
 esac

@@ -10,10 +10,11 @@
       "play": "minecraft.dolpen.net",
       "map": "map.minecraft.dolpen.net"
     },
-    "description" : "primary popopo server",
+    "id" : "popopo",
+    "description" : "secondary popopo server",
     "version": "1.10.2",
     "seed" : "",
-    "memory" : 4096
+    "memory" : 8192
   },
   "java": {
     "jdk_version": "8",
