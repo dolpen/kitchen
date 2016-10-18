@@ -33,4 +33,13 @@ directory '/var/www/squid' do
   action :create
 end
 
+cron 'update squid cert' do
+  user 'root'
+  command '/opt/letsencrypt/certbot-auto certonly --webroot -w /var/www/squid/ -d squid.dolpen.net'
+  hour '5'
+  minute '0'
+  day '1'
+  month '*/2'
+end
+
 

@@ -4,6 +4,8 @@
   },
   "run_list": [
     "recipe[base]",
+    "recipe[python]",
+    "recipe[acme]",
     "recipe[sites::main]",
     "recipe[sites::squid]"
   ],

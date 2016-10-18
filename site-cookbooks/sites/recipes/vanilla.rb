@@ -8,7 +8,6 @@
 #
 
 include_recipe 'nginx::default'
-include_recipe 'letsencrypt::default'
 
 site=node['minecraft']['domain']['play']
 sans=Array[site]

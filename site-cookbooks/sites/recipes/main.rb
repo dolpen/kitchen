@@ -41,3 +41,23 @@ template '/var/www/main/index.html' do
   action :create
 end
 
+cron 'reboot nginx' do
+  user 'root'
+  command 'service nginx restart'
+  hour '10'
+  minute '0'
+  day '1'
+  month '*/2'
+end
+
+cron 'update main cert' do
+  user 'root'
+  command '/opt/letsencrypt/certbot-auto certonly --webroot -w /var/www/main/ -d dolpen.net'
+  hour '0'
+  minute '0'
+  day '1'
+  month '*/2'
+end
+
+
+
