@@ -145,7 +145,7 @@ mc_command() {
 
 mc_chatlog() {
     CHATLOG_FILE="`date +%Y%m%d -d '-1 day'`.txt"
-    as_user "find $MCPATH/logs -type f -daystart -mtime '0' -name '*.log.gz' | sort -n | tr \\n \\0 | xargs -0 zcat | grep '^\[[0-9:]*\]\s\[Server thread\/INFO\]:\s<' | sed -e 's/\[Server\sthread\/INFO\]:\s//g' > $MCPATH/chat/$CHATLOG_FILE"
+    as_user "find $MCPATH/logs -type f -daystart -mtime '0' -name '*.log.gz' | sort -n | tr '\n' '\0' | xargs -0 zcat | grep '^\[[0-9:]*\]\s\[Server thread\/INFO\]:\s<' | sed -e 's/\[Server\sthread\/INFO\]:\s//g' > $MCPATH/chat/$CHATLOG_FILE"
     as_user "find $MCPATH/chat/$CHATLOG_FILE -empty | xargs rm"
 }
 

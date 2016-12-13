@@ -7,14 +7,14 @@
   },
   "minecraft": {
     "domain": {
-      "play": "modded.dolpen.net",
-      "map": "modded.dolpen.net"
+      "play": "urk.minecraft.dolpen.net",
+      "map": "urk.minecraft.dolpen.net"
     },
-    "id" : "popopoex",
-    "description" : "extremely modded popopo server",
-    "version": "1.10.2",
+    "id" : "urk",
+    "description" : "Urkommunismus",
+    "version": "1.11",
     "seed" : "",
-    "memory" : 6144
+    "memory" : 8192
   },
   "java": {
     "jdk_version": "8",
@@ -26,7 +26,7 @@
   },
   "run_list": [
     "recipe[base]",
-    "recipe[minecraft::forge]",
+    "recipe[minecraft::vanilla]",
     "recipe[sites::vanilla]",
     "recipe[app]"
   ],
