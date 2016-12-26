@@ -11,19 +11,16 @@ include_recipe 'sites::minecraft'
 
 
 template '/etc/nginx/conf.d/minecraft.conf' do
-  source 'conf/bukkit.conf.erb'
+  source 'conf/vanilla.conf.erb'
   owner 'root'
   group 'root'
   mode 0644
   notifies :reload, 'service[nginx]'
 end
 
-link '/var/www/map' do
-  to '/opt/minecraft/plugins/dynmap/web'
-end
 
 template '/var/www/minecraft/index.html' do
-  source 'pages/bukkit.html.erb'
+  source 'pages/urk.html.erb'
   owner 'nginx'
   group 'root'
   mode 0777

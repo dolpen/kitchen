@@ -11,6 +11,7 @@
       "map": "urk.minecraft.dolpen.net"
     },
     "id" : "urk",
+    "gamemode" : 3,
     "description" : "Urkommunismus",
     "version": "1.11",
     "seed" : "",
@@ -27,7 +28,7 @@
   "run_list": [
     "recipe[base]",
     "recipe[minecraft::vanilla]",
-    "recipe[sites::vanilla]",
+    "recipe[sites::urk]",
     "recipe[app]"
   ],
   "automatic": {

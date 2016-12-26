@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>原始共産制</title>
+
+</head>
+<body>
+<h1>原始共産制</h1>
+
+<h2>ルール</h2>
+
+<ul>
+  <li>全てのユーザーはアドベンチャーモードでスタートし、観戦者となる</li>
+  <li>管理者に許可されたユーザーだけがサバイバルモードに移行し、プレイヤーとなる</li>
+  <li>管理者は @dolpen のみだが、管理者の増加や変更などが発生する</li>
+</ul>
+
+<h2>基本情報</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>どれ</th>
+    <th>どう</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>場所</td>
+    <td><%= node['minecraft']['domain']['play'] %></td>
+  </tr>
+  <tr>
+    <td>ポート</td>
+    <td>デフォルト(25565)</td>
+  </tr>
+  <tr>
+    <td>難易度</td>
+    <td>イージー</td>
+  </tr>
+  <tr>
+    <td>人数</td>
+    <td><%= node['minecraft']['capacity'] %></td>
+  </tr>
+  <tr>
+    <td>基礎バージョン</td>
+    <td><%= node['minecraft']['version'] %></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>メンテナンス情報</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>なに</th>
+    <th>いつ</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>セーブデータの<a href="/backup">バックアップ</a></td>
+    <td>毎日 18:00</td>
+  </tr>
+  <tr>
+    <td>サーバープロセスの再起動</td>
+    <td>毎日 19:00</td>
+  </tr>
+  <tr>
+    <td>前日<a href="/chat">チャットログ</a>の抽出</td>
+    <td>毎日 19:30</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
