@@ -13,7 +13,7 @@
     "id" : "urk",
     "gamemode" : 3,
     "description" : "Urkommunismus",
-    "version": "1.11",
+    "version": "1.11.2",
     "seed" : "",
     "memory" : 8192
   },
