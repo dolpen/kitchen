@@ -8,6 +8,7 @@
   "minecraft": {
     "domain": {
       "play": "minecraft.dolpen.net",
+      "raw": "play.minecraft.dolpen.net",
       "map": "map.minecraft.dolpen.net"
     },
     "id" : "popopo",

@@ -3,10 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>原始共産制</title>
+  <script type="text/javascript">
+    window.onload = function(){
+      var show = function(message){
+        var stats = document.querySelector('#status');
+        stats.textContent = message;
+      };
+      var req = new XMLHttpRequest();
+      req.open('GET', 'https://api.minetools.eu/query/<%= node['minecraft']['domain']['raw'] %>/25565', true);
+      req.onload = function() {
+        var success = this.status >= 200 && this.status < 400;
+        if(!success)return;
+        var resp = JSON.parse(this.response);
+        var list = resp['Playerlist'];
+        show(list?(list.join(',')+' がプレイ中'):'誰もいないようです');
 
+      };
+      req.onerror = function(e) {
+        show('状態取得に失敗しました。。。');
+      };
+      req.send();
+    };
+  </script>
 </head>
 <body>
 <h1>原始共産制</h1>
+
+<h2>状態</h2>
+
+<div id="status">状態を取得しています</div>
 
 <h2>ルール</h2>
 

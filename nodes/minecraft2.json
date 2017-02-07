@@ -8,7 +8,8 @@
   "minecraft": {
     "domain": {
       "play": "urk.minecraft.dolpen.net",
-      "map": "urk.minecraft.dolpen.net"
+      "raw": "urk.play.minecraft.dolpen.net",
+      "map": "urk.map.minecraft.dolpen.net"
     },
     "id" : "urk",
     "gamemode" : 3,
